@@ -1,0 +1,55 @@
+ {% extends 'base.html' %}
+ {% load static %}
+
+ {% block title %}
+Главная
+ {% endblock %}
+
+ {% block content %}
+  <ul class="nav nav-pills sticky-top bg-white nav-fill">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <span style="font-weight: bold;">Главная</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="top-sellers.html"><span style="font-weight: bold;">Топ продавцов</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="advertisement-post.html">
+        <span style="font-weight: bold;">Разместить объявление</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="register.html">
+        <span style="font-weight: bold;">Регистрация</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="login.html">
+        <span style="font-weight: bold;">Войти</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="profile.html">
+        <span style="font-weight: bold;">Профиль</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <span style="font-weight: bold;">Выйти</span>
+      </a>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="col" style="margin: 50px;">
+      <div class="display-2">
+          {{ form.as_p }}
+        <span class="badge bg-primary">Сообщите миру об этом в этой форме</span>
+      </div>
+    </div>
+  </div>
+  <form method="post" enctype="multipart/form-data"> </form> {% crsf_token %}
+  <script src="js/bootstrap.bundle.min.js"></script>
+ {% endblock %}
